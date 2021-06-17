@@ -54,7 +54,7 @@ function setup()
   bg= createSprite(windowWidth/2,windowHeight/2, 1200,640);
   bg.addImage(bgImage)
   bg.x=bg.width/2
-  bg.scale=2.7
+  bg.scale=1.5
  
  
 
