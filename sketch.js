@@ -17,7 +17,7 @@ var jumpsound,bgsound,mousesound,gameoversound,barksound
 
 function preload()
 {
-  bgImage=loadImage("bg.jpg")
+  bgImage=loadImage("bg1.jpg")
    
   tomImg=loadAnimation("tom/t1.png","tom/t2.png","tom/t3.png","tom/t4.png","tom/t5.png","tom/t6.png",
   "tom/t7.png","tom/t8.png");
@@ -51,25 +51,25 @@ function setup()
   ground=createSprite(600,windowHeight-30,1400,10);
   ground.shapeColor="brown";
 
-  bg= createSprite(600,140, 1200,640);
+  bg= createSprite(windowWidth/2,windowHeight/2, 1200,640);
   bg.addImage(bgImage)
   bg.x=bg.width/2
   bg.scale=2.7
  
  
 
-  tom= createSprite(330, windowHeight-100, 50, 50);
+  tom= createSprite(330, windowHeight-300, 50, 50);
   tom.addAnimation("running" , tomImg)
   tom.addAnimation("collided", tomImg2);
   tom.scale=1.2;
   tom.setCollider("rectangle",0,0,100,150);
 
-  jerry=createSprite(windowWidth-500,windowHeight-110,20,20);
+  jerry=createSprite(windowWidth-500,windowHeight-310,20,20);
   jerry.addAnimation("teasing",jerryImg);
   jerry.scale=0.6;
   jerry.visible=false;
  
-  spike=createSprite(70,windowHeight-150,20,20);
+  spike=createSprite(70,windowHeight-350,20,20);
   spike.addAnimation("bite",spikeImg);
   spike.addAnimation("collided", spikeImg2);
   spike.scale=1;
@@ -209,7 +209,7 @@ function spawnCoins() {
 
 function spawnObstacles() {
   if(frameCount % 100 === 0) {
-    var obstacle = createSprite(1000,windowHeight-100,10,40);
+    var obstacle = createSprite(1000,windowHeight-300,10,40);
     //obstacle.debug = true;
     obstacle.velocityX = -(10+score/100)
     obstacle.setCollider("rectangle",0,0,100,300);
